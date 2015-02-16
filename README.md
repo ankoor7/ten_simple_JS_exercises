@@ -3,13 +3,13 @@ Practise exercises taken from the first result in google
 http://www.ling.gu.se/~lager/teaching/dialogue_systems%20II/labs/javascript.html
 
 
-Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.
+1) Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.
 
-Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
+2) Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
 
-Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
+3) Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 
-Write a function translate() that will translate a text into "rövarspråket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
+4) Write a function translate() that will translate a text into "rövarspråket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
 
 Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 
