@@ -36,7 +36,16 @@ function isVowel(letter) {
   return ['a', 'e', 'i', 'o', 'u'].indexOf(letter) !== -1;
 }
 
-// Tests for max()
+function translate (text) {
+  return text.split("").map(translateLetter).join("");
+}
+
+function translateLetter(x) {
+  return (isVowel(x) || x === ' ') ? x : x + 'o' + x;
+}
+
+
+//Tests for max()
 log("The max() function:");
 test("last arguement is maximum", max(9,10) === 10);
 test("first arguement is maximum", max(9,8) === 9 );
@@ -53,3 +62,7 @@ log("The isVowel() function:");
 test("matches a vowel", isVowel('a') === true);
 test('returns false when given a consonant', isVowel('d') === false);
 test('handles incorrect input', (isVowel('dasad') && isVowel(['a', 'b'])) === errorStatement);
+
+//  Tests translate()
+log("The translate() function:")
+test("translates text", translate("this is fun") === "tothohisos isos fofunon")
