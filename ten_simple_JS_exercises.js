@@ -17,6 +17,7 @@ function test(name, assertion) {
 // Answers
 var errorStatement = "incorrect input";
 
+//  Q 1
 // Max function for 2 numbers
 function max(a, b) {
   if ((isNaN(a) || isNaN(b)) || arguments.length !== 2) {
@@ -25,10 +26,12 @@ function max(a, b) {
   return (a > b) ? a : b;
 }
 
+//  Q 2
 function maxOfThree(a, b, c) {
   return max(max(a,b), c);
 }
 
+//  Q 3
 function isVowel(letter) {
   if (!(typeof arguments[0] === 'string' && arguments[0].length === 1)) {
     return errorStatement;
@@ -36,6 +39,7 @@ function isVowel(letter) {
   return ['a', 'e', 'i', 'o', 'u'].indexOf(letter) !== -1;
 }
 
+//  Q 4
 function translate (text) {
   return text.split("").map(translateLetter).join("");
 }
@@ -44,6 +48,10 @@ function translateLetter(x) {
   return (isVowel(x) || x === ' ') ? x : x + 'o' + x;
 }
 
+
+//  Q 5
+
+// Tests for
 
 //Tests for max()
 log("The max() function:");
