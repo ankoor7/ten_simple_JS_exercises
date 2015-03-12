@@ -70,6 +70,21 @@ log("The multiply() function:");
 test("mulitiplying numbers correctly", multiply([1,2,3,4]) === 24 )
 
 
+//  Q 6
+function reverse (text) {
+  var reverse = '';
+  for (var i = text.length - 1; i >= 0; i--) {
+    reverse = reverse + text[i]
+  };
+  return reverse;
+}
+
+// Tests for Q6
+log("The reverse() function:");
+test("reverses a string", reverse("jag testar") === "ratset gaj")
+
+
+
 // //Tests for max()
 // log("The max() function:");
 // test("last arguement is maximum", max(9,10) === 10);
