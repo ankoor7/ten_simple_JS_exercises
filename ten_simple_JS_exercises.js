@@ -101,6 +101,14 @@ function findLongestWord (words) {
     });
 }
 
+// Q9
+function filterLongWords (words, minimumLength) {
+  return words.filter( function(word) {
+    return (word.length > minimumLength)
+  });
+}
+
+
 if (debugging) {
   log("Testing, ...");
   //Tests for max()
@@ -141,9 +149,12 @@ if (debugging) {
   test("to translate properly", toSwedish("merry christmas and a happy new year") === "god jul och gott nytt år");
 
   // Tests for Q8
-  log("The filterLongestWord function");
-  test("finds longest word", findLongestWord(['a', 'the', 'maximum', 'small']) === 'maximum')
+  log("The findLongestWord function");
+  test("finds longest word", findLongestWord(['a', 'the', 'maximum', 'small']) === 'maximum');
 
-
+  // Tests for Q9
+  log("The filterLongWords function");
+  test("filters words smaller than the specified length", filterLongWords(['a', 'the', 'maximum', 'small'], 4)=== ['maximum', 'small']);
+  test("filters words equal in length to the specified length", filterLongWords(['a', 'the', 'maximum', 'small'], 3)=== ['maximum', 'small']);
 
 }
