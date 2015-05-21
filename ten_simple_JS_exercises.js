@@ -2,7 +2,7 @@
 
 // debugging functions
 var debugging = true;
-var debugVerbose = false;
+var debugVerbose = true;
 function log(output) {
   console.log(output);
 }
@@ -94,6 +94,12 @@ function toSwedish (greeting) {
 
 }
 
+// Q 8
+function findLongestWord (words) {
+    return words.reduce( function(previousWord, currentWord) {
+      return (previousWord.length > currentWord.length) ? previousWord : currentWord;
+    });
+}
 
 if (debugging) {
   log("Testing, ...");
@@ -133,5 +139,11 @@ if (debugging) {
   // Tests for Q7
   log("The toSwedish() function:");
   test("to translate properly", toSwedish("merry christmas and a happy new year") === "god jul och gott nytt år");
+
+  // Tests for Q8
+  log("The filterLongestWord function");
+  test("finds longest word", findLongestWord(['a', 'the', 'maximum', 'small']) === 'maximum')
+
+
 
 }

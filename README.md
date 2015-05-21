@@ -17,8 +17,8 @@ http://www.ling.gu.se/~lager/teaching/dialogue_systems%20II/labs/javascript.html
 
 7) Represent a small bilingual lexicon as a Javascript object in the following fashion {"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"år"} and use it to translate your Christmas cards from English into Swedish.
 
-Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
+8) Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 
-Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
+9) Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 
 Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
