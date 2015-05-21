@@ -73,6 +73,27 @@ function reverse (text) {
   return result;
 }
 
+// Q 7
+function toSwedish (greeting) {
+  var dictionary = {
+    "merry":"god",
+    "christmas":"jul",
+    "and":"och",
+    "happy": "gott",
+    "new":"nytt",
+    "year":"år"
+  };
+  return greeting.split(/\s/)
+      .map( function(a) {
+        return dictionary[a];
+      })
+      .filter(function(word) {
+        return (word !== undefined && word.length !== 0);
+      })
+      .join(' ');
+
+}
+
 
 if (debugging) {
   log("Testing, ...");
@@ -108,4 +129,9 @@ if (debugging) {
   // Tests for Q6
   log("The reverse() function:");
   test("reverses a string", reverse("jag testar") === "ratset gaj");
+
+  // Tests for Q7
+  log("The toSwedish() function:");
+  test("to translate properly", toSwedish("merry christmas and a happy new year") === "god jul och gott nytt år");
+
 }
