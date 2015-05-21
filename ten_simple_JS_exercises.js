@@ -103,7 +103,7 @@ function findLongestWord (words) {
 
 // Q9
 function filterLongWords (words, minimumLength) {
-  return words.filter( function(word) {
+  return  words.filter( function(word) {
     return (word.length > minimumLength)
   });
 }
@@ -154,7 +154,6 @@ if (debugging) {
 
   // Tests for Q9
   log("The filterLongWords function");
-  test("filters words smaller than the specified length", filterLongWords(['a', 'the', 'maximum', 'small'], 4)=== ['maximum', 'small']);
-  test("filters words equal in length to the specified length", filterLongWords(['a', 'the', 'maximum', 'small'], 3)=== ['maximum', 'small']);
-
+  var answer = filterLongWords(['a', 'the', 'maximum', 'small'], 4);
+  test("filters words correctly", answer[0] === 'maximum' && answer[1] === 'small' && answer.length === 2);
 }
