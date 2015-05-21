@@ -1,13 +1,15 @@
 "use strict";
 
 // debugging functions
+var debugging = true;
+var debugVerbose = false;
 function log(output) {
   console.log(output);
 }
 
 function test(name, assertion) {
   if (assertion) {
-    log("      passed " + name + " test");
+    if (debugVerbose) { log("      passed " + name + " test"); }
   } else {
     log("    FAILED " + name + " test");
   }
@@ -59,50 +61,51 @@ function sum(numbers) {
 function multiply(numbers) {
   return numbers.reduce( function(a, b) {
     return a * b;
-  })
+  });
 }
-
-// Tests for 5, sum()
-log("The sum() function:");
-test("adding numbers correctly", sum([1,2,3,4]) === 10 )
-// Tests for 5, multiply()
-log("The multiply() function:");
-test("mulitiplying numbers correctly", multiply([1,2,3,4]) === 24 )
-
 
 //  Q 6
 function reverse (text) {
-  var reverse = '';
+  var result = '';
   for (var i = text.length - 1; i >= 0; i--) {
-    reverse = reverse + text[i]
-  };
-  return reverse;
+    result = result + text[i];
+  }
+  return result;
 }
 
-// Tests for Q6
-log("The reverse() function:");
-test("reverses a string", reverse("jag testar") === "ratset gaj")
 
+if (debugging) {
+  log("Testing, ...");
+  //Tests for max()
+  log("The max() function:");
+  test("last arguement is maximum", max(9,10) === 10);
+  test("first arguement is maximum", max(9,8) === 9 );
+  test("arguements must be numbers", max('a',9) === errorStatement);
+  test("only two arguements are passed", max(9,8,6) === errorStatement);
 
+  // Tests for maxOfThree()
+  log("The maxOfThree() function: ");
+  test("finding the maximum", maxOfThree(1,2,3) === 3);
+  test("handling the correct input", (maxOfThree(1,'a',3) && maxOfThree(1,2,'c')) === errorStatement);
 
-// //Tests for max()
-// log("The max() function:");
-// test("last arguement is maximum", max(9,10) === 10);
-// test("first arguement is maximum", max(9,8) === 9 );
-// test("arguements must be numbers", max('a',9) === errorStatement);
-// test("only two arguements are passed", max(9,8,6) === errorStatement);
+  // Tests isVowel()
+  log("The isVowel() function:");
+  test("matches a vowel", isVowel('a') === true);
+  test('returns false when given a consonant', isVowel('d') === false);
+  test('handles incorrect input', (isVowel('dasad') && isVowel(['a', 'b'])) === errorStatement);
 
-// // Tests for maxOfThree()
-// log("The maxOfThree() function: ");
-// test("finding the maximum", maxOfThree(1,2,3) === 3);
-// test("handling the correct input", (maxOfThree(1,'a',3) && maxOfThree(1,2,'c')) === errorStatement);
+  //  Tests translate()
+  log("The translate() function:");
+  test("translates text", translate("this is fun") === "tothohisos isos fofunon");
 
-// // Tests isVowel()
-// log("The isVowel() function:");
-// test("matches a vowel", isVowel('a') === true);
-// test('returns false when given a consonant', isVowel('d') === false);
-// test('handles incorrect input', (isVowel('dasad') && isVowel(['a', 'b'])) === errorStatement);
+  // Tests for 5, sum()
+  log("The sum() function:");
+  test("adding numbers correctly", sum([1,2,3,4]) === 10 );
+  // Tests for 5, multiply()
+  log("The multiply() function:");
+  test("mulitiplying numbers correctly", multiply([1,2,3,4]) === 24 );
 
-// //  Tests translate()
-// log("The translate() function:")
-// test("translates text", translate("this is fun") === "tothohisos isos fofunon")
+  // Tests for Q6
+  log("The reverse() function:");
+  test("reverses a string", reverse("jag testar") === "ratset gaj");
+}
