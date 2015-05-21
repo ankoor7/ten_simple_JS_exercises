@@ -108,6 +108,19 @@ function filterLongWords (words, minimumLength) {
   });
 }
 
+//  Q 10
+function charFreq (string) {
+  var list = {};
+  for (var i = string.length - 1; i >= 0; i--) {
+    if ( list.hasOwnProperty([string.charAt(i)]) ) {
+      list[string.charAt(i)]++;
+    } else {
+      list[string.charAt(i)] = 1;
+    }
+  }
+  return list;
+}
+
 
 if (debugging) {
   var answer;
@@ -162,5 +175,5 @@ if (debugging) {
   // Tests for Q10
   log("The charFreq function");
   answer = charFreq("abbabcbdbabdbdbabababcbcbab");
-  test("counts numbers correctly", (answer.a === 0 && answer.b === 0 && answer.c === 0 && answer.d === 0 ) );
+  test("counts numbers correctly", (answer.a === 7 && answer.b === 14 && answer.c === 3 && answer.d === 3 ) );
 }
