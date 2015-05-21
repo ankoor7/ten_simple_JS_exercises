@@ -110,6 +110,7 @@ function filterLongWords (words, minimumLength) {
 
 
 if (debugging) {
+  var answer;
   log("Testing, ...");
   //Tests for max()
   log("The max() function:");
@@ -154,6 +155,12 @@ if (debugging) {
 
   // Tests for Q9
   log("The filterLongWords function");
-  var answer = filterLongWords(['a', 'the', 'maximum', 'small'], 4);
+  answer = filterLongWords(['a', 'the', 'maximum', 'small'], 4);
   test("filters words correctly", answer[0] === 'maximum' && answer[1] === 'small' && answer.length === 2);
+  answer = null;
+
+  // Tests for Q10
+  log("The charFreq function");
+  answer = charFreq("abbabcbdbabdbdbabababcbcbab");
+  test("counts numbers correctly", (answer.a === 0 && answer.b === 0 && answer.c === 0 && answer.d === 0 ) );
 }
